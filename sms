@@ -1,0 +1,19 @@
+# importing twilio
+from twilio.rest import Client
+
+# Your Account Sid and Auth Token from twilio.com / console
+account_sid = 'AC51c3ef99c4fca53cf1c68ade1b7ae6b0'
+auth_token = '69562641b9ed93c341019694fcd66545'
+
+client = Client(account_sid, auth_token)
+
+''' Change the value of 'from' with the number  
+received from Twilio and the value of 'to' 
+with the number in which you want to send message.'''
+message = client.messages.create(
+    from_='+16089608653',
+    body='hello, how are you?',
+    to='+9720542304494'
+)
+
+print(message.sid)
