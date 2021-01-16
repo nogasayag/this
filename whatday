@@ -1,0 +1,36 @@
+import datetime
+import time
+from enum import Enum
+
+
+class Week(Enum):
+    monday = 0
+    tuesday = 1
+    wednesday = 2
+    thursday = 3
+    friday = 4
+    saturday = 5
+    sunday = 6
+
+
+# Initialize the date parameters
+day = datetime.datetime.now().day
+month = 8
+year = int(input("Enter a year: "))
+date = datetime.date(year, month, day)
+
+print("Processing.")
+time.sleep(1)
+print(".", end="")
+time.sleep(1)
+print(".", end="")
+time.sleep(1)
+print(".", end="")
+time.sleep(1)
+print(".", end="")
+
+# Get the day name from the Week enum
+weekday = date.weekday()
+weekday = Week(weekday)
+print(weekday)
+print(date, "was a", weekday.name)
